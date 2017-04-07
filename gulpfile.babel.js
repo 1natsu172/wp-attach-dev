@@ -66,7 +66,7 @@ gulp.task('sass', ()=> {
     outputStyle: ':expanded'
   }).on('error', sass.logError))
   .pipe(pleeease({
-    minifier: false,
+    minifier: true,
     mqpacker: true,
     autoprefixer: {
       browsers: ["last 3 version", "last 4 ios_saf versions"]
