@@ -11,11 +11,11 @@
     "mocha": true,
     "node": true
   },
-  "parser": "babel-eslint",
+  # "parser": "babel-eslint",
   "plugins": [
-    "react",
-    "import",
-    "prefer-object-spread"
+    # "react",
+    # "import",
+    # "prefer-object-spread"
   ],
   "settings": {
     "import/ignore": [
