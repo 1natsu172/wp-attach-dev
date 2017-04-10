@@ -158,7 +158,7 @@ gulp.task('default', ()=> {
 
 
 // Production Task - Do uglify etc…
-gulp.task('prodClean', del.bind(null, [DIR.dest.assets+'/js'] ));
+gulp.task('prodClean', del.bind(null, [DIR.dest.assets+'/js'], { force: true } ));
 gulp.task('production', ['prodClean'], () => {
     // WebpackのProduction処理を行う
     gulp.src(DIR.src.assets+'/js/*.js')
