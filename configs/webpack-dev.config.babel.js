@@ -39,4 +39,4 @@ if (argv.SETMODE === 'lint') {
 module.exports = jsConfig;
 
 // console.log(JSON.stringify(jsConfig, null, 2));
-console.log(jsConfig);
+// console.log(jsConfig);
