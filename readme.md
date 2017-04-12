@@ -178,4 +178,4 @@ add_filter('script_loader_tag', 'add_defer_attribute', 10, 2);
 
 [https://taitan.backlog.jp/git/ENGINEER_MEMO/GITIGNORE/tree/master](https://taitan.backlog.jp/git/ENGINEER_MEMO/GITIGNORE/tree/master)
 
-> git集のなかに[WP_THEME_CUSTOMIZE_DEVPACK.gitignore]があるので使いましょう！！
+> git集のなかに[WP_THEME_CUSTOMIZE_DEVPACK.gitignore]があるので使いましょう！！!
