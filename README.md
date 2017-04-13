@@ -15,7 +15,7 @@ ___       __    ________   _________   ___  ___   _______    _____ ______    ___
 
 これはWordPressのテーマ開発のボイラープレートです！！！！！！！！！！！！！！！！
 
-##### 方針
+### 方針
 
 * テーマファイルは同梱していない構成です
   * テーマ開発スターターキットや既存のテーマに組み合わせて使うことができます
@@ -26,9 +26,9 @@ ___       __    ________   _________   ___  ___   _______    _____ ______    ___
     * テーマの<head>タグで愚直に読み込みするとか
     * functions.phpからwp_enque_scriptするとか
 
-##### 構成
+### 構成
 
-* Main
+#### devDependencies
   * gulp
   * browsersync
   * sass
@@ -36,7 +36,8 @@ ___       __    ________   _________   ___  ___   _______    _____ ______    ___
   * webpack
   * eslint
 
-* Libraries
+
+#### dependencies
   * bourbon
   * neat
   * gsap
@@ -47,11 +48,12 @@ ___       __    ________   _________   ___  ___   _______    _____ ______    ___
   * webfontloader
 
 
-##### 動作環境
+### 動作環境
 
 * node: "^7.4.0"
 
 **Vagrant+[VCCW](http://vccw.cc/)や[Local by Flywheel](https://local.getflywheel.com/)のような仮想開発環境がおすすめです。**
+
 
 ## ディレクトリ構成
 
@@ -179,3 +181,4 @@ add_filter('script_loader_tag', 'add_defer_attribute', 10, 2);
 [https://taitan.backlog.jp/git/ENGINEER_MEMO/GITIGNORE/tree/master](https://taitan.backlog.jp/git/ENGINEER_MEMO/GITIGNORE/tree/master)
 
 > git集のなかに[WP_THEME_CUSTOMIZE_DEVPACK.gitignore]があるので使いましょう！！!
+> (たいていの場合`git clone`したディレクトリに置くことになると思う)
