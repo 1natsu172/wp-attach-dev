@@ -184,3 +184,4 @@ add_filter('script_loader_tag', 'add_defer_attribute', 10, 2);
 
 > git集のなかに[WP_THEME_CUSTOMIZE_DEVPACK.gitignore]があるので使いましょう！！!
 > (たいていの場合`git clone`したディレクトリに置くことになると思う)
+> (Local by Flywheelなら`~/Local Sites/ローカルサイト名`直下に置く)
