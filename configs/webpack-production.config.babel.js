@@ -1,10 +1,11 @@
 'use strict';
 
-import { DIR } from './dirSets.js'; // Directory config of project
+import dirSets from './dirSets.js'; // Directory config of project
 import path from 'path';
 import webpack from 'webpack';
 import webpackMerge from 'webpack-merge';
 import commonConfig from './webpack-common.config.babel.js';
+const DIR = dirSets('./');// webpackはentryポイントを'./'の相対パスで書かないとならないため引数で渡す
 
 
 // js処理config(commonConfigとマージする)

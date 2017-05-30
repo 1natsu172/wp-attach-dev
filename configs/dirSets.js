@@ -1,26 +1,33 @@
-//// ディレクトリ構成定義しましょう
+import path from 'path';
 
-const DIRBASE = {
-  domain: 'wp-theme-customize-devpack.dev', //サイトのドメインを適宜定義しましょう：http://ナシの接尾'/'ナシ
-  wordpressThemesFolder: '../app/public/wp-content/themes/', // WPのthemesフォルダまでのパスを定義しましょう：ルートディレクトリ(gulpfileなどがあるディレクトリ)から相対パス始まりの接尾'/'アリ
-  developThemeName: 'twentyseventeen/', // 開発したいテーマのフォルダを指定しましょう：接尾'/'アリ
-  buildFolder: 'build/', // テーマフォルダに配置する自前の開発用ソースのフォルダを指定しましょう。特別変更する必要なければデフォルトのままでOKです：接尾'/'アリ
-  srcAssets: 'customizingAssets', // buildフォルダ内のアセットフォルダの名前を指定します。特別変更する必要なければデフォルトのままでOKです：接尾'/'ナシ
-  destAssets: 'customizedAssets', // 吐き出されるコンパイル後のアセットフォルダの名前を指定します。特別変更する必要なければデフォルトのままでOKです：接尾'/'ナシ
+//// ディレクトリ構成定義しましょう
+let DIRBASE = {
+  domain: 'wp-theme-customize-devpack.dev', //サイトのドメインを適宜定義しましょう：'http://'はナシ
+  wordpressThemesFolder: '../app/public/wp-content/themes', // WordPressの(wp-content内にある)'themes'フォルダまでのパスを定義しましょう：ルートディレクトリ(gulpfile.jsなどがあるディレクトリ)から相対パスで記述
+  developThemeName: 'twentyseventeen', // 開発を行なっていきたいWordPressのテーマフォルダ名を指定しましょう：twentyseventeenなら'twentyseventeen'
+  buildFolder: 'build', // 本開発キット同梱のビルドフォルダを指定しましょう。特別変更する必要なければデフォルトのままでOKです
+  srcAssets: 'customizingAssets', // 本開発キット同梱のビルドフォルダ内にあるアセットフォルダの名前を指定します。特別変更する必要なければデフォルトのままでOKです。
+  destAssets: 'customizedAssets', // テーマフォルダ内に吐き出されるコンパイル後のアセットフォルダの名前を指定しましょう。特別変更する必要なければデフォルトのままでOKです。
 }
+
+DIRBASE.buildFolder = path.isAbsolute(DIRBASE.buildFolder) ? '.' + DIRBASE.buildFolder : './' + DIRBASE.buildFolder;
 
 // DIRBASEで設定したディレクトリ構成を元にディレクトリパスを定義します。
 // そして色んな場所でフォルダ構成を使えるように、モジュールエクスポートするやつです。
-export const DIR = {
-  domain: DIRBASE.domain,
-  wpThemes: DIRBASE.wordpressThemesFolder,
-  devTheme: DIRBASE.wordpressThemesFolder + DIRBASE.developThemeName,
-  src: {
-    base: './' + DIRBASE.buildFolder,
-    assets: './' + DIRBASE.buildFolder + DIRBASE.srcAssets
-  },
-  dest: {
-    base: DIRBASE.wordpressThemesFolder + DIRBASE.developThemeName,
-    assets: DIRBASE.wordpressThemesFolder + DIRBASE.developThemeName + DIRBASE.destAssets
-  }
-}
+export default function dirSets(pathString) {
+  const period = pathString || ''; // webpackは'./'はじまりのpathでないといけない、gulp(3.9.1)は'./'はじまりのpathだとダメなので引数で受け取れるようにする
+
+  return {
+    domain: path.normalize(DIRBASE.domain),
+    wpThemes: path.join(DIRBASE.wordpressThemesFolder),
+    devTheme: path.join(DIRBASE.wordpressThemesFolder, DIRBASE.developThemeName),
+    src: {
+      base: period + path.join(DIRBASE.buildFolder),
+      assets: period + path.join(DIRBASE.buildFolder, DIRBASE.srcAssets)
+    },
+    dest: {
+      base: path.join(DIRBASE.wordpressThemesFolder, DIRBASE.developThemeName),
+      assets: path.join(DIRBASE.wordpressThemesFolder, DIRBASE.developThemeName , DIRBASE.destAssets)
+    }
+  };
+};

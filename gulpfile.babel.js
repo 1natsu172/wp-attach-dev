@@ -16,7 +16,8 @@ import webpack from 'webpack';
 import webpackStream from 'webpack-stream';
 import webpackDevConfig from './configs/webpack-dev.config.babel.js'; // webpackDevelop設定ファイル
 import webpackProductionConfig from './configs/webpack-production.config.babel.js'; // webpackProduction設定ファイル
-import { DIR } from './configs/dirSets.js'; // Directory config of project
+import dirSets from './configs/dirSets.js'; // Directory config of project
+const DIR = dirSets();// webpackはentryポイントを'./'の相対パスで書かないとならないため引数で渡す
 
 
 //// Tasks

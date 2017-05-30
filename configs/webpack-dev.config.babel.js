@@ -1,11 +1,13 @@
 'use strict';
 
-import { DIR } from './dirSets.js'; // Directory config of project
+import dirSets from './dirSets.js'; // Directory config of project
 import path from 'path';
 import webpack from 'webpack';
 import webpackMerge from 'webpack-merge';
 import minimist from 'minimist';
 import commonConfig from './webpack-common.config.babel.js';
+const DIR = dirSets('./');// webpackはentryポイントを'./'の相対パスで書かないとならないため引数で渡す
+
 
 const argv = minimist(process.argv.slice(2)); // parse arguments from CLI
 
