@@ -1,9 +1,10 @@
 'use strict';
 
-import { DIR } from './dirSets.js'; // Directory config of project
+import dirSets from './dirSets.js'; // Directory config of project
 import path from 'path';
 import webpack from 'webpack';
 const CURRENT_WORKING_DIR = process.cwd();// nodeのカレントワーキングディレクトリをとる
+const DIR = dirSets('./');// webpackはentryポイントを'./'の相対パスで書かないとならないため引数で渡す
 
 const commonConfig = {
   devtool: "source-map",
