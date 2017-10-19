@@ -56,7 +56,7 @@ WordPressのテーマ開発をすばやくやるためのボイラープレー�
 
 ```
 .
-├── build // ⭐️このフォルダが実際に触っていくフォルダです
+├── build // ⭐️ このフォルダが実際に触っていくフォルダです
 │   └── customizingAssets
 │       ├── css ← 生のCSSを使いたい場合はここへ
 │       ├── images ← 画像はここへ
@@ -64,7 +64,7 @@ WordPressのテーマ開発をすばやくやるためのボイラープレー�
 │       ├── sass ← Sassのファイル群
 │       └── simpleCopyFiles ← なにか単純にテーマフォルダ内にコピーしたいファイルがある場合はここへ
 ├── configs
-│   ├── dirSets.js ← ⭐️フォルダ構成の設定ファイルです
+│   ├── dirSets.js ← ⭐️ フォルダ構成の設定ファイルです
 │   ├── webpack-common.config.babel.js ← webpackの共通部分の設定ファイル
 │   ├── webpack-dev.config.babel.js ← webpackの開発時用の設定ファイル
 │   └── webpack-production.config.babel.js ← webpackのリリース時用の設定ファイル
