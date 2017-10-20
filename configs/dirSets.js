@@ -2,7 +2,7 @@ import path from 'path';
 
 //// ディレクトリ構成定義しましょう
 let DIRBASE = {
-  domain: 'wp-theme-customize-devpack.dev', //サイトのドメインを適宜定義しましょう：'http://'はナシ
+  domain: 'wp-testsite.dev', //サイトのドメインを適宜定義しましょう：'http://'はナシ
   wordpressThemesFolder: '../app/public/wp-content/themes', // WordPressの(wp-content内にある)'themes'フォルダまでのパスを定義しましょう：ルートディレクトリ(gulpfile.jsなどがあるディレクトリ)から相対パスで記述
   developThemeName: 'twentyseventeen', // 開発を行なっていきたいWordPressのテーマフォルダ名を指定しましょう：twentyseventeenなら'twentyseventeen'
   buildFolder: 'build', // 本開発キット同梱のビルドフォルダを指定しましょう。特別変更する必要なければデフォルトのままでOKです
