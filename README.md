@@ -177,7 +177,9 @@ add_filter('script_loader_tag', 'add_defer_attribute', 10, 2);
 
 ## ちなみにプロジェクトまるごとgit管理するなら
 
-ここのgitignoreを使いましょう
+ここにgitignore用意してあるので使いましょう
+
+* [https://gist.github.com/1natsu172/f4e22ec1aa408cff5cf29327abee14a0](https://gist.github.com/1natsu172/f4e22ec1aa408cff5cf29327abee14a0)
 
 > (たいていの場合`git clone`したディレクトリに置くことになります)
 > (Local by Flywheelなら`~/Local Sites/ローカルサイト名`直下に置く)
